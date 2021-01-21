@@ -1,0 +1,12 @@
+<ng-template [ngIf]="progressModels">
+  <ng-container *ngIf="progressModels.length > 0">
+    <ol class="steps">
+      <li *ngFor="let progress of progressModels"
+        (click)="onStepClick(progress)"
+        [ngClass]="configureStepStyle(progress)"
+        [attr.data-step]="progress.stepName">
+        {{progress.name}}
+      </li>
+    </ol>
+  </ng-container>
+</ng-template>
